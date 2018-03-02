@@ -11,6 +11,7 @@ var routesMap map[string]string
 
 // Index for the route '/'
 func Index(c *gin.Context) {
+	routesMap = make(map[string]string)
 	routesMap["GET"] = "/"
 	routesMap["POST"] = "/feedbacks/create"
 	routesMap["GET"] = "/feedbacks"
