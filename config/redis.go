@@ -8,5 +8,6 @@ import (
 
 // Redis Global Redis cliend
 var Redis = redis.NewClient(&redis.Options{
-	Addr: os.Getenv("REDIS_URL"),
+	Addr:     os.Getenv("REDIS_SERVER"),
+	Password: os.Getenv("REDIS_PASSWORD"),
 })
