@@ -24,7 +24,14 @@
 #   go-tests = true
 #   unused-packages = true
 
+[metadata]
+codename = "anonback"
 
 [prune]
+  non-go = true
   go-tests = true
   unused-packages = true
+
+[[constraint]]
+  name = "github.com/gin-gonic/gin"
+  version = "1.2.0"
