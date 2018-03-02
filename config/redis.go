@@ -1,8 +1,12 @@
 package config
 
-import "github.com/go-redis/redis"
+import (
+	"os"
+
+	"github.com/go-redis/redis"
+)
 
 // Redis Global Redis cliend
 var Redis = redis.NewClient(&redis.Options{
-	Addr: "localhost:6379",
+	Addr: os.Getenv("REDIS_URL"),
 })
