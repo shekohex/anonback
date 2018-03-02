@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/gin-gonic/gin"
 )
@@ -20,7 +21,7 @@ func setupRouter() (app *gin.Engine) {
 func main() {
 	// gin.SetMode(gin.ReleaseMode)
 	app := setupRouter()
-	fmt.Println("Listening on :8080")
+	fmt.Println("Listening on " + os.Getenv("PORT"))
 	// Listen and Server in 0.0.0.0:8080
-	app.Run(":8080")
+	app.Run(":" + os.Getenv("PORT"))
 }
