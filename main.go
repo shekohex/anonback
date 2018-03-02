@@ -5,16 +5,16 @@ import (
 	"os"
 
 	"github.com/gin-gonic/gin"
+	"github.com/shekohex/anonback/routes"
 )
 
-func helloWorld(c *gin.Context) {
-	c.String(200, "Hello World")
-}
 func setupRouter() (app *gin.Engine) {
 	// gin.DisableConsoleColor()
 	app = gin.Default()
-	// Ping test
-	app.GET("/", helloWorld)
+	app.GET("/", routes.Index)
+	app.GET("/feedbacks", routes.GetFeedbacks)
+	app.POST("/feedbacks/reply/:feedbackId", routes.ReplyFeedback)
+	app.POST("/feedbacks/create", routes.CreateFeedback)
 	return
 }
 
