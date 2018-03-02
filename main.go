@@ -18,9 +18,9 @@ func setupRouter() (app *gin.Engine) {
 }
 
 func main() {
-	gin.SetMode(gin.ReleaseMode)
+	// gin.SetMode(gin.ReleaseMode)
 	app := setupRouter()
+	fmt.Println("Listening on :8080")
 	// Listen and Server in 0.0.0.0:8080
 	app.Run(":8080")
-	fmt.Println("Listening on :8080")
 }
